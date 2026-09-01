@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="16" fill="#064e3b"/>
+  <!-- sprout: stem + two leaves, echoing the navbar's Plant mark -->
+  <path d="M32 48 V30" stroke="#fbbf24" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M32 33c0-8-7-12-14-12 0 8 6 13 14 12z" fill="#fbbf24"/>
+  <path d="M32 30c0-9 7-14 15-14 0 9-7 15-15 14z" fill="#f59e0b"/>
+  <path d="M24 48h16" stroke="#fef3c7" stroke-width="3.4" stroke-linecap="round"/>
+</svg>

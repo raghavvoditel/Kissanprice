@@ -1,0 +1,92 @@
+{
+  "theme": "light",
+  "typography": {
+    "headings": "Cabinet Grotesk",
+    "body": "Manrope",
+    "notes": "Ensure tracking is tight for headings (tracking-tight), line-height is snug. Body should be highly readable, text-base on mobile, text-lg on desktop."
+  },
+  "colors": {
+    "primary": "#166534",
+    "primary_foreground": "#ffffff",
+    "secondary": "#fef3c7",
+    "secondary_foreground": "#92400e",
+    "accent": "#d97706",
+    "accent_foreground": "#ffffff",
+    "background": "#fbfbf9",
+    "foreground": "#1c1917",
+    "card": "#ffffff",
+    "card_foreground": "#1c1917",
+    "border": "#e7e5e4",
+    "success": "#15803d",
+    "destructive": "#dc2626",
+    "muted": "#f5f5f4",
+    "muted_foreground": "#78716c",
+    "chart_1": "#166534",
+    "chart_2": "#86efac",
+    "chart_3": "#d97706",
+    "chart_4": "#fcd34d",
+    "chart_5": "#14532d",
+    "notes": "Earthy, honest, Indian-farmer-centric feel. High contrast for outdoor visibility."
+  },
+  "visual_enhancers": {
+    "shadows": "Soft, layered ambient shadows on cards. Use shadow-sm for default, shadow-md for hover. Use 1px border (#e7e5e4) to crisp up edges.",
+    "borders": "Subtle border-radius (rounded-xl or rounded-2xl for cards, large touch targets).",
+    "spacing": "Generous spacing. p-4 to p-6 inside cards. Gap-4 to gap-6 in lists.",
+    "glassmorphism": "Avoid in data-heavy areas. Use Solid flat backgrounds to ensure max legibility under sunlight."
+  },
+  "components": {
+    "button": "Pill-shaped or rounded-xl. h-12 minimum for large tap targets (mobile-first). Active states should have clear visual feedback.",
+    "card": "Solid white background, 1px border, subtle shadow. No dense tables. Use stack layout inside cards.",
+    "tabs": "Use full-width tabs on mobile, clear active state with primary green.",
+    "inputs": "h-12 min height. Clear borders, accessible focus rings (ring-2 ring-primary).",
+    "charts": "Shadcn Recharts. Line chart with shaded Area for confidence bands."
+  },
+  "layouts": {
+    "global": "Mobile-first. Max-w-md mx-auto for mobile views, or responsive grid (grid-cols-1 md:grid-cols-2 lg:grid-cols-3) on desktop.",
+    "mandi_comparison": "List of cards. Each card has Mandi Name, Distance, Modal Price, Transport Cost. Net Price highlighted in big bold text (green for positive).",
+    "dashboard": "Bento grid style or stacked vertical cards on mobile. Clear hierarchy: Location -> Crop -> Quantity -> Quality.",
+    "navigation": "Bottom tab bar for mobile, or simple sticky header with hamburger."
+  },
+  "motion": {
+    "hover": "Subtle lift (-translate-y-0.5) and shadow increase on cards. Color darkening on buttons.",
+    "transitions": "transition-colors duration-200, transition-transform duration-200. No 'transition-all'."
+  },
+  "accessibility": {
+    "contrast": "Ensure APCA/WCAG AA contrast. Text must be legible outdoors.",
+    "touch_targets": "Min 48px height for all interactive elements.",
+    "data_testid": "Add data-testid attributes to all buttons, inputs, and major sections."
+  },
+  "media": {
+    "icons": "Use @phosphor-icons/react (Duotone or Regular weight) for an approachable, clear UI.",
+    "images": {
+      "hero": "https://images.unsplash.com/photo-1620901433789-1d2f85a93653?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBmYXJtZXJ8ZW58MHx8fHwxNzg4MjQzOTUzfDA&ixlib=rb-4.1.0&q=85",
+      "market": "https://images.unsplash.com/photo-1711153468168-0a4fc13c0ac7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwxfHx2ZWdldGFibGVzJTIwbWFya2V0JTIwbWFuZGklMjBpbmRpYXxlbnwwfHx8fDE3ODgyNDM5NDF8MA&ixlib=rb-4.1.0&q=85",
+      "cold_storage": "https://images.unsplash.com/photo-1671656202170-d382ace43d3c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwzfHxjb2xkJTIwc3RvcmFnZXxlbnwwfHx8fDE3ODgyNDM5NTN8MA&ixlib=rb-4.1.0&q=85",
+      "agriculture": "https://images.pexels.com/photos/29039798/pexels-photo-29039798.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    }
+  },
+  "libraries": {
+    "icons": "yarn add @phosphor-icons/react",
+    "charts": "recharts (via shadcn)"
+  },
+  "instructions_to_main_agent": [
+    "Build a mobile-first app. Focus heavily on mobile viewport usability (touch targets, stacked cards).",
+    "Implement 6 specific pages as asked. Use React Router.",
+    "Do NOT use dense tables. Use Stacked Cards for Mandi Comparison, Cold Storage, and Export Directory.",
+    "Embed the Live Transport Cost Calculator directly into the Mandi Comparison view (maybe as a sticky top panel or inside a drawer).",
+    "Ensure 'Net Price' is highly visible (bold text, green if profitable, red/amber if loss).",
+    "Use light theme only to ensure readability outdoors under sunlight.",
+    "Do not center-align body text. Keep layouts functional and scannable.",
+    "Add 'data-testid' to all key interactive elements.",
+    "Use Phosphor icons."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Don't make generic centered layouts. Use grid and flex for structured asymmetry.",
+    "Create depth through subtle layered design elements (shadows, borders).",
+    "Do not apply 'transition: all'. Use specific transitions (e.g., transition-colors).",
+    "Always use modern button styles (h-12 min, rounded-xl).",
+    "NEVER use AI assistant emoji characters for icons.",
+    "Add micro-animations for hover and focus states.",
+    "For toasts, use 'sonner'."
+  ]
+}

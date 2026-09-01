@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #fbfbf9;
+    color: #1c1917;
+}
+
+.font-display {
+    font-family: 'DM Serif Display', 'Cabinet Grotesk', Georgia, serif;
+    letter-spacing: -0.02em;
+}
+
+.font-manrope {
+    font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+@layer base {
+    :root {
+        --background: 60 20% 98%;
+        --foreground: 24 10% 10%;
+        --card: 0 0% 100%;
+        --card-foreground: 24 10% 10%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 24 10% 10%;
+        --primary: 142 66% 24%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 46 87% 90%;
+        --secondary-foreground: 27 78% 30%;
+        --muted: 30 10% 96%;
+        --muted-foreground: 25 5% 45%;
+        --accent: 32 95% 44%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 74% 50%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 30 8% 90%;
+        --input: 30 8% 90%;
+        --ring: 142 66% 24%;
+        --chart-1: 142 66% 24%;
+        --chart-2: 141 78% 73%;
+        --chart-3: 32 95% 44%;
+        --chart-4: 45 96% 60%;
+        --chart-5: 142 70% 20%;
+        --radius: 0.9rem;
+
+        --brand-green: #166534;
+        --brand-green-dark: #14532d;
+        --brand-amber: #d97706;
+        --brand-cream: #fef3c7;
+        --brand-bg: #fbfbf9;
+        --brand-ink: #1c1917;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+    h1, h2, h3 {
+        font-family: 'DM Serif Display', 'Cabinet Grotesk', Georgia, serif;
+        letter-spacing: -0.02em;
+    }
+}
+
+/* Grain texture overlay for depth */
+.grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    mix-blend-mode: multiply;
+}
+
+/* Interactive card lift */
+.card-lift {
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+.card-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -12px rgba(22, 101, 52, 0.18), 0 4px 10px -4px rgba(0,0,0,0.06);
+    border-color: #d6d3d1;
+}
+
+/* Custom striped background for hero */
+.hero-mesh {
+    background:
+      radial-gradient(1200px 400px at 90% -10%, rgba(217, 119, 6, 0.18), transparent 60%),
+      radial-gradient(1000px 500px at -10% 20%, rgba(22, 101, 52, 0.14), transparent 60%),
+      linear-gradient(180deg, #fbfbf9 0%, #f5f5f4 100%);
+}
+
+/* Subtle dotted map background */
+.dot-bg {
+    background-image: radial-gradient(rgba(22,101,52,0.09) 1px, transparent 1px);
+    background-size: 18px 18px;
+}
+
+.divider-x {
+    background: repeating-linear-gradient(90deg, #57534e 0 8px, transparent 8px 16px);
+    height: 1px;
+    opacity: 0.35;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fde68a;
+}
+.chip-green {
+    background: #dcfce7;
+    color: #14532d;
+    border-color: #bbf7d0;
+}
+.chip-red {
+    background: #fee2e2;
+    color: #991b1b;
+    border-color: #fecaca;
+}
+
+/* Big price text */
+.price-big {
+    font-family: 'DM Serif Display', 'Cabinet Grotesk', Georgia, serif;
+    font-size: 2rem;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 500ms ease both; }
+.delay-1 { animation-delay: 60ms; }
+.delay-2 { animation-delay: 120ms; }
+.delay-3 { animation-delay: 180ms; }
+.delay-4 { animation-delay: 240ms; }
+
+/* Underline sweep on links */
+.link-sweep {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    transition: background-size 250ms ease;
+}
+.link-sweep:hover { background-size: 100% 1px; }
+
+::selection {
+    background: #166534;
+    color: #fff;
+}
